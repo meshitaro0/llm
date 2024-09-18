@@ -1,0 +1,163 @@
+/*@theme template*/
+
+@import "default";
+
+/* 共通 */
+/* メインカラー設定 */
+:root {
+        --main-color: #dadce3;
+    }
+/* 行高さ */
+section * {
+    line-height: normal;
+}
+/* フッター左側にロゴ画像を表示 */
+/* footer {
+    padding-left: 140px;
+    background: no-repeat left/100px url("logo.png");
+} */
+header {
+    width: 100%;
+    position: absolute;
+    top: unset;
+    bottom: 21px;
+    left: 0;
+    text-align: center;
+    font-size: 80%;
+}
+footer {
+    text-align: center;
+    font-size: 80%;
+}
+/* ページ数 */
+section::after {
+    font-size: 60%;
+    content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+}
+/* #:h1, ##:h2, ...に対応 */
+h1 {
+    color: var(--main-color);
+}
+h2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 20px 40px;
+    display: inline-block;
+    width: 100%;
+    background: var(--main-color);
+    /* border-bottom: 8px double #aaa; */
+}
+h3 {
+    position: absolute;
+    top: 3em;
+    border-left: 8px solid var(--main-color);
+}
+
+/* 表紙 */
+section.titlepage header {
+    font-size: 80%;
+    position: absolute;
+    top: 80px;
+    left : 80px;
+    color:red;
+    border: 1px solid red;
+    padding: 0.25rem
+}
+section.titlepage p>code {
+    background: transparent;
+    font-size: 80%;
+    position: absolute;
+    bottom: 100px;
+}
+
+/* 目次 */
+section.toc {
+    background: linear-gradient(to right, var(--main-color) 150px, #fff 0px);
+}
+section.toc h2 {
+    color: #fff;
+    border:0;
+}
+section.toc footer {
+    background-image: url("logo.png");
+}
+section.toc a {
+    color: #000;
+}
+section.toc li {
+    font-size: 90%;
+}
+section.toc>ul {
+    list-style-type: none;
+    position: relative;
+    left: 90px;
+    overflow: hidden;
+}
+section.toc>ul ul {
+    list-style-type: decimal;
+}
+/* 2段組みの表現 */
+section.toc>ul ul>li {
+    width: 45%;
+    float:left;
+    clear:left;
+}
+section.toc>ul ul>li:nth-child(n+6) {
+    position:relative;
+    top: -8em;
+    left: 50%;
+}
+section.toc p {
+    position: absolute;
+    top: 0px;
+    left: 180px;
+    padding-top:20px;
+    font-size: 90%;
+    color: #000;
+    font-weight: bold;
+}
+
+/* 表 */
+table {
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+    width: 90%;
+    display:table;
+}
+thead th {
+    text-align: center !important;
+}
+thead tr {
+    background: #eaeaea;
+}
+tbody tr:nth-child(2n+1) {
+    background: #fff;
+}
+tbody tr:nth-child(2n) {
+    background: #dde5d3;
+}
+
+/* 背景画像 */
+section.bgpage p {
+    background:white;
+    padding: 0.25em;
+}
+
+/* 最終ページ */
+section.lastpage {
+    background: var(--main-color);
+    color:white;
+}
+section.lastpage h2 {
+    display: none;
+}
+section.lastpage footer {
+    background-image: url("logo.png");
+    color:red;
+}
+section.lastpage p {
+    text-align: center;
+    font-size: 200%;
+}
