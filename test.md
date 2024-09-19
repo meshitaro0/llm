@@ -64,6 +64,9 @@ _Markdown_ の __記法__ により *斜体* や **太字** ~~打ち消し~~ な
 1. 1つめ
 2. 2つめ
 
+<span style="color: blue">abc</span>
+<div class="textbox">ここにテキストを記入</div>
+
 ---
 ## テーブル
 
@@ -77,9 +80,30 @@ _Markdown_ の __記法__ により *斜体* や **太字** ~~打ち消し~~ な
 
 ---
 ## 画像
-
 通常通り指定可能。
-!["代替テキスト"](logo.png)
+<style scoped>
+  table {
+    /* table-layout: fixed; */
+    bottom: 150px;
+    width: 1000px;
+    display:table;
+    font-size: 8pt;
+  }
+  thead th {
+    background: white;
+    border: none;
+  }
+  tbody td, tr {
+    border: none;
+  }
+  tbody tr:nth-child(n) {
+    background: #fff;
+  }
+</style>
+||
+|:-:|
+|![w:200](logo.png)<td width="70%">![w:50](logo.png)</td>|
+|hidarigawa<td width="70%">migigawaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>|
 
 ---
 ## 画像(背景)
